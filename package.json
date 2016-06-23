@@ -1,0 +1,21 @@
+{
+  "name": "@pragmaproducts/pragma-grouplayout",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@pragmaproducts/build-utilities": "0.0.18"
+  },
+  "jspm": {
+    "dependencies": {
+      "aurelia-bootstrapper": "npm:aurelia-bootstrapper@^1.0.0-beta.1.2.1",
+      "aurelia-framework": "npm:aurelia-framework@^1.0.0-beta.1.2.5"
+    },
+    "devDependencies": {}
+  }
+}

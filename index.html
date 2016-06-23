@@ -1,0 +1,26 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta charset="UTF-8">
+    <title>Application Title</title>
+    <link rel="stylesheet" href="./styles/style.css">
+</head>
+<body aurelia-app="main">
+<script>
+    requestAnimationFrame(function() {
+        loadScript('./jspm_packages/system.js', function() {
+            loadScript('./config.js', function() {
+                System.import('aurelia-bootstrapper');
+            });
+        });
+    });
+    function loadScript(scriptName, loadEvent) {
+        var script = document.createElement('script');
+        script.onload = loadEvent;
+        script.src = scriptName;
+        document.head.appendChild(script);
+    }
+</script>
+</body>
+</html>
