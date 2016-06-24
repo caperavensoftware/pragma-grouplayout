@@ -25,8 +25,11 @@
     "aurelia-templating-binding": "github:aurelia/templating-binding/dist/aurelia-templating-binding.d.ts#f90d1082b0aa3be71c23e26c1e152b22593a15b5",
     "aurelia-templating-resources": "github:aurelia/templating-resources/dist/aurelia-templating-resources.d.ts#98f81efd2d7270742bfaa1f3c37d8a71a3936172",
     "aurelia-templating-router": "github:aurelia/templating-router/dist/aurelia-templating-router.d.ts#68460e0398f896c5883be81588bdd5f3855f05c3",
+    "chai": "registry:dt/chai#3.4.0+20160601211834",
     "es6-collections": "registry:dt/es6-collections#0.5.1+20160316155526",
     "es6-promise": "registry:dt/es6-promise#0.0.0+20160614011821",
+    "mocha": "registry:dt/mocha#2.2.5+20160619032855",
+    "sinon": "registry:dt/sinon#1.16.0+20160517064723",
     "systemjs": "registry:dt/systemjs#0.19.29+20160608101455"
   },
   "globalDevDependencies": {},

@@ -1,5 +1,5 @@
 import {customElement, useShadowDOM, inject, bindable} from 'aurelia-framework';
-import {StackContainerItemPosition, StackContentItemPositionToCSS} from './stack-container-definitions';
+import {StackContentItemPositionToCSS} from './stack-container-definitions';
 
 
 @customElement('stack-container')
