@@ -1,47 +1,29 @@
 import {customElement, useShadowDOM, inject, bindable} from 'aurelia-framework';
 import {StackContentItemPositionToCSS} from './stack-container-definitions';
-
+import {StackContainerBase} from "./stack-container-base";
 
 @customElement('stack-container')
 @useShadowDOM()
 @inject(Element)
-export class StackContainer {
-    element = null;
-    itemsContainer = null;
-
+export class StackContainer extends StackContainerBase{
     @bindable itemPosition = null;
     @bindable itemStyle = null;
-    @bindable orientation = null;
 
     constructor(element) {
-        this.element = element;
-    }
-
-    itemPositionChanged() {
-        this.updateItemPosition();
-    }
-
-    itemStyleChanged() {
-        this.updateItemStyle();
-    }
-
-    orientationChanged() {
-
+        super(element)
     }
 
     bind() {
-        this.updateItemPosition();
-        this.updateItemStyle();
+        this.updateItemPosition(this.itemPosition);
+        this.updateItemStyle(this.itemStyle);
     }
 
-    updateItemPosition() {
-        if (this.itemsContainer) {
-            this.itemsContainer.style.justifyContent = StackContentItemPositionToCSS(this.itemPosition);
-        }
+    itemPositionChanged() {
+        this.updateItemPosition(this.itemPosition);
     }
 
-    updateItemStyle() {
-
+    itemStyleChanged() {
+        this.updateItemStyle(this.itemStyle);
     }
 
 }

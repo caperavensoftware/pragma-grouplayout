@@ -3,7 +3,7 @@
   "compilerOptions": {
     "sourceMap": true,
     "target": "es5",
-    "module": "system",
+    "module": "commonjs",
     "declaration": false,
     "noImplicitAny": false,
     "noResolve": true,
