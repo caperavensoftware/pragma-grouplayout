@@ -11,4 +11,11 @@ stack-container {
       cursor: pointer;
     }
   }
+
+  .sc_tab {
+    display: block;
+    height: 100%;
+    background: green;
+    margin: 0.2rem;
+  }
 }
