@@ -11,6 +11,7 @@ export class StackContainer {
 
     @bindable itemPosition = null;
     @bindable itemStyle = null;
+    @bindable orientation = null;
 
     constructor(element) {
         this.element = element;
@@ -22,6 +23,10 @@ export class StackContainer {
 
     itemStyleChanged() {
         this.updateItemStyle();
+    }
+
+    orientationChanged() {
+
     }
 
     bind() {
@@ -38,4 +43,5 @@ export class StackContainer {
     updateItemStyle() {
 
     }
+
 }

@@ -9,8 +9,9 @@
   "author": "",
   "license": "ISC",
   "devDependencies": {
-    "@pragmaproducts/build-utilities": "0.0.19",
+    "@pragmaproducts/build-utilities": "0.0.21",
     "chai": "^3.5.0",
+    "gulp-debug": "^2.1.2",
     "mocha": "^2.5.3",
     "sinon": "^1.17.4"
   },
