@@ -3,8 +3,6 @@
   <component name="ChangeListManager">
     <list default="true" id="8523a37f-b894-43d2-a4c9-f8a120fefea8" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/components/selection-highlight/selection-highlight-base.ts" afterPath="$PROJECT_DIR$/src/components/selection-highlight/selection-highlight-base.ts" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/components/selection-highlight/selection-highlight.scss" afterPath="$PROJECT_DIR$/src/components/selection-highlight/selection-highlight.scss" />
     </list>
     <ignored path="pragma-grouplayout.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -553,7 +551,7 @@
       <workItem from="1466749185222" duration="13439000" />
       <workItem from="1467008521484" duration="11981000" />
       <workItem from="1467033304478" duration="4776000" />
-      <workItem from="1467181095207" duration="17882000" />
+      <workItem from="1467181095207" duration="17898000" />
     </task>
     <task id="LOCAL-00001" summary="initial">
       <created>1466686909737</created>
@@ -604,7 +602,14 @@
       <option name="project" value="LOCAL" />
       <updated>1467204061449</updated>
     </task>
-    <option name="localTasksCounter" value="8" />
+    <task id="LOCAL-00008" summary="animation">
+      <created>1467206473791</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1467206473791</updated>
+    </task>
+    <option name="localTasksCounter" value="9" />
     <servers />
   </component>
   <component name="TestHistory">
@@ -640,7 +645,7 @@
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="50248000" />
+    <option name="totallyTimeSpent" value="50264000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -683,7 +688,8 @@
     <MESSAGE value="testing added" />
     <MESSAGE value="working out stack" />
     <MESSAGE value="selection event" />
-    <option name="LAST_COMMIT_MESSAGE" value="selection event" />
+    <MESSAGE value="animation" />
+    <option name="LAST_COMMIT_MESSAGE" value="animation" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
