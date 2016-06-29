@@ -1,0 +1,22 @@
+selection-highlight {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+
+  .highlight-item {
+    width: 3rem;
+    height: 3rem;
+    background: red;
+  }
+
+  .highlight-item:after {
+    content: "";
+    display: block;
+    position: absolute;
+    bottom: 0;
+    height: 0.5rem;
+    width: 3rem;
+    background: green;
+    margin-bottom: 0.2rem;
+  }
+}

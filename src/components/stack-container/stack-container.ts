@@ -6,6 +6,8 @@ import {StackContainerBase} from "./stack-container-base";
 @inject(Element)
 export class StackContainer extends StackContainerBase{
     @bindable itemPosition = null;
+    @bindable selectable = false;
+    @bindable selectedItem = null;
 
     constructor(element) {
         super(element)
@@ -13,9 +15,28 @@ export class StackContainer extends StackContainerBase{
 
     bind() {
         this.updateItemPosition(this.itemPosition);
+        this.registerEvents();
+    }
+
+    unbind() {
+        this.unregisterEvents();
     }
 
     itemPositionChanged() {
         this.updateItemPosition(this.itemPosition);
+    }
+
+    selectableChanged() {
+        if (this.selectable) {
+            this.registerEvents();
+        }
+        else {
+            this.unregisterEvents();
+        }
+    }
+
+    itemClicked(event) {
+        super.itemClicked(event);
+        this.selectedItem = event.target;
     }
 }
