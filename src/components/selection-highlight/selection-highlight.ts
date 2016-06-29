@@ -10,12 +10,13 @@ export class SelectionHighlight extends SelectionHighlightBase {
         super(element);
     }
 
-    highlightElement(elementToHighlight) {
-        console.error('highlight');
-        console.log(elementToHighlight);
+    unbind() {
+        this.selectedItem = null;
     }
 
     selectedItemChanged() {
-        console.log(this.selectedItem);
+        if (this.selectedItem) {
+            this.performHighlight(this.selectedItem);
+        }
     }
 }

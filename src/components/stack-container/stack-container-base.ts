@@ -27,7 +27,11 @@ export class StackContainerBase {
 
     itemClicked(event) {
         this.selectedElement = event.target;
-        const selectedId = this.selectedElement.getAttribute('data-id');
+        this.selectedElementChanged();
         event.preventDefault();
+    }
+
+    selectedElementChanged() {
+        console.log('override this method on inherited');
     }
 }

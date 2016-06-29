@@ -4,9 +4,10 @@ selection-highlight {
   height: 100%;
 
   .highlight-item {
-    width: 3rem;
+    will-change: transform;
+    transition: all 0.5s cubic-bezier(0.07, 0.71, 0.32, 1.02);
+    width: 5rem;
     height: 3rem;
-    background: red;
   }
 
   .highlight-item:after {
@@ -15,7 +16,7 @@ selection-highlight {
     position: absolute;
     bottom: 0;
     height: 0.5rem;
-    width: 3rem;
+    width: 5rem;
     background: green;
     margin-bottom: 0.2rem;
   }

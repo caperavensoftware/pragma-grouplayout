@@ -20,6 +20,8 @@ export class StackContainer extends StackContainerBase{
 
     unbind() {
         this.unregisterEvents();
+        this.selectedItem = null;
+        this.selectedElement = null;
     }
 
     itemPositionChanged() {
@@ -35,8 +37,7 @@ export class StackContainer extends StackContainerBase{
         }
     }
 
-    itemClicked(event) {
-        super.itemClicked(event);
-        this.selectedItem = event.target;
+    selectedElementChanged() {
+        this.selectedItem = this.selectedElement;
     }
 }
