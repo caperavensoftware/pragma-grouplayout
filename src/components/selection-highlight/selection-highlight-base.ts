@@ -21,7 +21,7 @@ export class SelectionHighlightBase {
             const x = (rect.left - parentRect.left) + rectXCenter - offsetX;
             const y = (rect.top - parentRect.top) + rectYCenter - offsetY;
 
-            this.highlightElement.style.transform = `translate(${x}px, ${y}px)`;
+            this.highlightElement.style.transform = `translate3d(${x}px, ${y}px, 0)`;
         }.bind(this))
     }
 
