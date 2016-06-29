@@ -5,7 +5,7 @@ selection-highlight {
 
   .highlight-item {
     will-change: transform;
-    transition: all 0.5s cubic-bezier(0.07, 0.71, 0.32, 1.02);
+    transition: transform 0.5s cubic-bezier(0.07, 0.71, 0.32, 1.02);
     width: 5rem;
     height: 3rem;
   }

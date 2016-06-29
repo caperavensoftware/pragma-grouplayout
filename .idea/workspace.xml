@@ -5,10 +5,6 @@
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/components/selection-highlight/selection-highlight-base.ts" afterPath="$PROJECT_DIR$/src/components/selection-highlight/selection-highlight-base.ts" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/components/selection-highlight/selection-highlight.scss" afterPath="$PROJECT_DIR$/src/components/selection-highlight/selection-highlight.scss" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/components/selection-highlight/selection-highlight.ts" afterPath="$PROJECT_DIR$/src/components/selection-highlight/selection-highlight.ts" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/components/stack-container/stack-container-base.ts" afterPath="$PROJECT_DIR$/src/components/stack-container/stack-container-base.ts" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/components/stack-container/stack-container.ts" afterPath="$PROJECT_DIR$/src/components/stack-container/stack-container.ts" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/views/welcome/welcome.scss" afterPath="$PROJECT_DIR$/src/views/welcome/welcome.scss" />
     </list>
     <ignored path="pragma-grouplayout.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -41,11 +37,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="selection-highlight-base.ts" pinned="false" current-in-tab="false">
+      <file leaf-file-name="selection-highlight-base.ts" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/components/selection-highlight/selection-highlight-base.ts">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="150">
-              <caret line="10" column="73" selection-start-line="10" selection-start-column="73" selection-end-line="10" selection-end-column="73" />
+              <caret line="10" column="0" selection-start-line="10" selection-start-column="0" selection-end-line="10" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -71,11 +67,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="selection-highlight.scss" pinned="false" current-in-tab="true">
+      <file leaf-file-name="selection-highlight.scss" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/components/selection-highlight/selection-highlight.scss">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="120">
-              <caret line="8" column="12" selection-start-line="8" selection-start-column="12" selection-end-line="8" selection-end-column="12" />
+            <state relative-caret-position="105">
+              <caret line="7" column="25" selection-start-line="7" selection-start-column="25" selection-end-line="7" selection-end-column="25" />
               <folding />
             </state>
           </provider>
@@ -125,9 +121,9 @@
         <option value="$PROJECT_DIR$/src/components/stack-container/stack-container-base.ts" />
         <option value="$PROJECT_DIR$/src/components/stack-container/stack-container.ts" />
         <option value="$PROJECT_DIR$/src/components/selection-highlight/selection-highlight.ts" />
-        <option value="$PROJECT_DIR$/src/components/selection-highlight/selection-highlight-base.ts" />
         <option value="$PROJECT_DIR$/src/views/welcome/welcome.scss" />
         <option value="$PROJECT_DIR$/src/components/selection-highlight/selection-highlight.scss" />
+        <option value="$PROJECT_DIR$/src/components/selection-highlight/selection-highlight-base.ts" />
       </list>
     </option>
   </component>
@@ -557,7 +553,7 @@
       <workItem from="1466749185222" duration="13439000" />
       <workItem from="1467008521484" duration="11981000" />
       <workItem from="1467033304478" duration="4776000" />
-      <workItem from="1467181095207" duration="16061000" />
+      <workItem from="1467181095207" duration="17882000" />
     </task>
     <task id="LOCAL-00001" summary="initial">
       <created>1466686909737</created>
@@ -601,7 +597,14 @@
       <option name="project" value="LOCAL" />
       <updated>1467199932820</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="selection event">
+      <created>1467204061449</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1467204061449</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="TestHistory">
@@ -637,7 +640,7 @@
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="48427000" />
+    <option name="totallyTimeSpent" value="50248000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -1029,24 +1032,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/components/selection-highlight/selection-highlight.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="270">
-          <caret line="18" column="53" selection-start-line="18" selection-start-column="53" selection-end-line="18" selection-end-column="53" />
-          <folding>
-            <element signature="e#0#65#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/components/selection-highlight/selection-highlight-base.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="150">
-          <caret line="10" column="73" selection-start-line="10" selection-start-column="73" selection-end-line="10" selection-end-column="73" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/views/welcome/welcome.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="120">
@@ -1065,8 +1050,26 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/components/selection-highlight/selection-highlight.scss">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="120">
-          <caret line="8" column="12" selection-start-line="8" selection-start-column="12" selection-end-line="8" selection-end-column="12" />
+        <state relative-caret-position="105">
+          <caret line="7" column="25" selection-start-line="7" selection-start-column="25" selection-end-line="7" selection-end-column="25" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/components/selection-highlight/selection-highlight.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="270">
+          <caret line="18" column="53" selection-start-line="18" selection-start-column="53" selection-end-line="18" selection-end-column="53" />
+          <folding>
+            <element signature="e#0#65#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/components/selection-highlight/selection-highlight-base.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="150">
+          <caret line="10" column="0" selection-start-line="10" selection-start-column="0" selection-end-line="10" selection-end-column="0" />
           <folding />
         </state>
       </provider>
