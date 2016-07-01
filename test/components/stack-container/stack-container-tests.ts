@@ -45,13 +45,13 @@ describe('stack container tests', function() {
         container.registerEvents();
 
         // Assert
-        assert((<any>container.element.addEventListener).calledTwice, "element addEventListener should have been called twice");
+        assert(elementSpy.calledTwice, "element addEventListener should have been called twice");
 
         assert(elementSpy.withArgs('click').calledOnce);
         assert(elementSpy.withArgs('touchstart').calledOnce);
 
         // Cleanup
-        (<any>container.element.addEventListener).restore();
+        elementSpy.restore();
     });
 
     it('unregisterEvents, ensure events are removed', function() {
@@ -63,8 +63,8 @@ describe('stack container tests', function() {
         container.unregisterEvents();
 
         // Assert
-        assert((<any>container.element.removeEventListener).calledTwice, "element removeEventListener should have been called twice");
-        assert((<any>container.itemsContainer.removeEventListener).calledTwice, "itemsContainer removeEventListener should have been called twice");
+        assert(elementSpy.calledTwice, "element removeEventListener should have been called twice");
+        assert(itemsContainerSpy.calledTwice, "itemsContainer removeEventListener should have been called twice");
 
         assert(elementSpy.withArgs('click').calledOnce, 'element remove click event expected');
         assert(elementSpy.withArgs('touchstart').calledOnce, 'element remove touchstart event expected');
@@ -73,7 +73,79 @@ describe('stack container tests', function() {
         assert(itemsContainerSpy.withArgs('focus').calledOnce, 'itemsContainer remove focus event expected');
 
         // Cleanup
-        (<any>container.element.removeEventListener).restore();
-        (<any>container.itemsContainer.removeEventListener).restore();
-    })
+        elementSpy.restore();
+        itemsContainerSpy.restore();
+    });
+
+    it ('registerCanFocusEvents, ensure events are added when a container can focus', function() {
+        // Arrange
+        const itemsContainerSpy = sinon.spy(container.itemsContainer, 'addEventListener');
+
+        // Act
+        container.registerCanFocusEvents();
+
+        // Assert
+        assert(itemsContainerSpy.calledTwice, "itemsContainer addEventListener should have been called twice");
+        assert(itemsContainerSpy.withArgs('keyup').calledOnce, 'itemsContainer add keyup event expected');
+        assert(itemsContainerSpy.withArgs('focus').calledOnce, 'itemsContainer add focus event expected');
+
+        // Cleanup
+        itemsContainerSpy.restore();
+    });
+
+    it ('unregisterCanFocusEvents, ensure events are added when a container can focus', function() {
+        // Arrange
+        const itemsContainerSpy = sinon.spy(container.itemsContainer, 'removeEventListener');
+
+        // Act
+        container.unregisterCanFocusEvents();
+
+        // Assert
+        assert(itemsContainerSpy.calledTwice, "itemsContainer removeEventListener should have been called twice");
+        assert(itemsContainerSpy.withArgs('keyup').calledOnce, 'itemsContainer remove keyup event expected');
+        assert(itemsContainerSpy.withArgs('focus').calledOnce, 'itemsContainer remove focus event expected');
+
+        // Cleanup
+        itemsContainerSpy.restore();
+    });
+
+    it ('itemClicked, do nothing because the container was clicked', function() {
+        // Arrange
+        const event = {
+            target: container.itemsContainer
+        };
+
+        const setSelectedElementSpy = sinon.spy(container, 'setSelectedElement');
+
+        // Act
+        container.itemClicked(event);
+
+        // Assert
+        expect(setSelectedElementSpy.callCount).to.equal(0, 'setSelectedElementSpy should not be called');
+
+        // Cleanup
+        setSelectedElementSpy.restore();
+    });
+
+    it ('itemClicked, call setSelectedElement', function() {
+        // Arrange
+        const event = {
+            target: {},
+            preventDefault() {}
+        };
+
+        const setSelectedElementSpy = sinon.spy(container, 'setSelectedElement');
+        const eventSpy = sinon.spy(event, 'preventDefault');
+
+        // Act
+        container.itemClicked(event);
+
+        // Assert
+        assert(setSelectedElementSpy.withArgs(event.target).calledOnce);
+        assert(eventSpy.calledOnce);
+
+        // Cleanup
+        setSelectedElementSpy.restore();
+        eventSpy.restore();
+    });
 });
