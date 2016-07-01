@@ -1,5 +1,4 @@
 import {StackContentItemPositionToCSS} from "./stack-container-definitions";
-import {child} from "aurelia-templating";
 
 export class StackContainerBase {
     element = null;

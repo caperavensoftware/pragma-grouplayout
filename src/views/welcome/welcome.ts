@@ -15,11 +15,19 @@ export class Welcome {
             },
             {
                 id: 3,
-                name: "Tab 3"
+                name: "Tab 3 With some other stuff"
             },
             {
                 id: 4,
                 name: "Tab 4"
+            },
+            {
+                id: 5,
+                name: "Tab 5"
+            },
+            {
+                id: 6,
+                name: "Tab 6"
             }]
 
     }

@@ -27,7 +27,10 @@ export class StackContainer extends StackContainerBase{
     }
 
     attached() {
-        this.focusChild(0);
+        if (this.canFocus)
+        {
+            this.focusChild(0);
+        }
     }
 
     itemPositionChanged() {
