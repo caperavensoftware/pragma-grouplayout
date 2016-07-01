@@ -9,7 +9,7 @@
   "author": "",
   "license": "ISC",
   "devDependencies": {
-    "@pragmaproducts/build-utilities": "0.0.23",
+    "@pragmaproducts/build-utilities": "0.0.24",
     "chai": "^3.5.0",
     "mocha": "^2.5.3",
     "sinon": "^1.17.4"
