@@ -18,22 +18,23 @@ export class StackContainerBase {
     registerEvents() {
         this.element.addEventListener('click', this.itemClicked.bind(this));
         this.element.addEventListener('touchstart', this.itemClicked.bind(this));
-        this.itemsContainer.addEventListener('focus', this.handelFocus.bind(this));
     }
 
     unregisterEvents() {
         this.element.removeEventListener('click', this.itemClicked);
         this.element.removeEventListener('touchstart', this.itemClicked);
 
-        this.unregisterArrowKeyStrokeEvents();
+        this.unregisterCanFocusEvents();
     }
 
-    registerArrowKeyStrokeEvents() {
+    registerCanFocusEvents() {
         this.itemsContainer.addEventListener('keyup', this.handelKeyPress.bind(this))
+        this.itemsContainer.addEventListener('focus', this.handelFocus.bind(this));
     }
 
-    unregisterArrowKeyStrokeEvents() {
+    unregisterCanFocusEvents() {
         this.itemsContainer.removeEventListener('keyup', this.handelKeyPress)
+        this.itemsContainer.removeEventListener('focus', this.handelFocus.bind);
     }
 
 
@@ -64,12 +65,12 @@ export class StackContainerBase {
 
         if (allowFocus) {
             this.itemsContainer.setAttribute("tabindex", 0);
-            this.registerArrowKeyStrokeEvents();
+            this.registerCanFocusEvents();
         }
         else {
             if (this.itemsContainer.hasAttribute('tabindex')) {
                 this.itemsContainer.removeAttribute('tabindex');
-                this.unregisterArrowKeyStrokeEvents();
+                this.unregisterCanFocusEvents();
             }
         }
     }
