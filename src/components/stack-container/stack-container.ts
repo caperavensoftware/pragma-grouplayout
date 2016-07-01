@@ -8,6 +8,7 @@ export class StackContainer extends StackContainerBase{
     @bindable itemPosition = null;
     @bindable selectable = false;
     @bindable selectedItem = null;
+    @bindable canFocus = false;
 
     constructor(element) {
         super(element)
@@ -15,6 +16,7 @@ export class StackContainer extends StackContainerBase{
 
     bind() {
         this.updateItemPosition(this.itemPosition);
+        this.setAllowFocus(this.canFocus);
         this.registerEvents();
     }
 
@@ -22,6 +24,10 @@ export class StackContainer extends StackContainerBase{
         this.unregisterEvents();
         this.selectedItem = null;
         this.selectedElement = null;
+    }
+
+    attached() {
+        this.focusChild(0);
     }
 
     itemPositionChanged() {
@@ -39,5 +45,9 @@ export class StackContainer extends StackContainerBase{
 
     selectedElementChanged() {
         this.selectedItem = this.selectedElement;
+    }
+
+    canFocusChanged() {
+        this.setAllowFocus(this.canFocus);
     }
 }
