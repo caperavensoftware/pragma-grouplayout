@@ -141,11 +141,26 @@ describe('stack container tests', function() {
         container.itemClicked(event);
 
         // Assert
-        assert(setSelectedElementSpy.withArgs(event.target).calledOnce);
-        assert(eventSpy.calledOnce);
+        assert(setSelectedElementSpy.withArgs(event.target).calledOnce, 'setSelectedElement should be called once');
+        assert(eventSpy.calledOnce, 'event prevent default should be called once');
 
         // Cleanup
         setSelectedElementSpy.restore();
         eventSpy.restore();
+    });
+
+    it ('setSelectedElement', function() {
+        // Arrange
+        const element = {};
+        const selectedElementChangedSpy = sinon.spy(container, 'selectedElementChanged');
+
+        // Act
+        container.setSelectedElement(element);
+
+        // Assert
+        assert(container.selectedElement === element, 'container selected element should be the same as the element passed on');
+        assert(selectedElementChangedSpy.calledOnce);
+        // Cleanup
+        selectedElementChangedSpy.restore();
     });
 });
