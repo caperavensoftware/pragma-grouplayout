@@ -327,7 +327,7 @@ describe('stack container tests', function() {
         assert(result === lastIndex, 'result should have been last index when moving left and the slected element is the first child');
     });
 
-    it ('getNextItemIndex, get index based on offset', function() {
+    it('getNextItemIndex, get index based on offset', function() {
         // Arrange
         container.selectedElement = container.itemsContainer.children[0];
 
