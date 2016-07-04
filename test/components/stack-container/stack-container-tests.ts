@@ -15,10 +15,11 @@ describe('stack container tests', function() {
         };
 
         const itemsContainer = {
-            style: {
-                justifyContent: ''
-            },
-
+            children: [{id: 1}, {id: 2}, {id: 3}],
+            style: {justifyContent: ''},
+            setAttribute(name: string, value: any) {},
+            hasAttribute(name: string) {return true;},
+            removeAttribute(name: string) {},
             addEventListener(event, callback) {
             },
             removeEventListener(event, callback) {
@@ -162,5 +163,178 @@ describe('stack container tests', function() {
         assert(selectedElementChangedSpy.calledOnce);
         // Cleanup
         selectedElementChangedSpy.restore();
+    });
+
+    it('focusChild', function(){
+        // Arrange
+        const setSelectedElementSpy = sinon.spy(container, 'setSelectedElement');
+
+        // Act
+        container.focusChild(0);
+
+        // Assert
+        assert(setSelectedElementSpy.calledOnce, 'setSelectedElement should have been called once from focusChild');
+        assert(setSelectedElementSpy.withArgs(container.itemsContainer.children[0]).calledOnce, 'focusChild does not seem to pass the right element to setSelectedElement');
+
+        // Cleanup
+        setSelectedElementSpy.restore();
+    });
+
+    it('selectedElementChanged', function() {
+        // Arrange
+        const consoleSpy = sinon.spy(console, "log");
+
+        // Act
+        container.selectedElementChanged();
+
+        // Assert
+        assert(consoleSpy.calledOnce, 'console.log should have been called in selectedElementChanged');
+
+        // Cleanup
+        consoleSpy.restore();
+    });
+
+    it ('setAllowFocus, no items container so return out of function', function() {
+        // Arrange
+        container.itemsContainer = null;
+
+        // Act
+        const result = container.setAllowFocus(true);
+
+        // Assert
+        assert(result === false, 'setAllowFocus should exit with return false if there is no container');
+    });
+
+    it ('setAllowFocus, make focusable', function() {
+        // Arrange
+        const setAttributeSpy = sinon.spy(container.itemsContainer, 'setAttribute');
+        const registerCanFocusEventsSpy = sinon.spy(container, 'registerCanFocusEvents');
+        
+        // Act
+        const result = container.setAllowFocus(true);
+
+        // Assert
+        assert(setAttributeSpy.withArgs('tabindex', 0).calledOnce, 'tabindex should be set with index 0');
+        assert(registerCanFocusEventsSpy.calledOnce, 'registerCanFocusEvent should have been called');
+        assert(result, 'result type should be true');
+        
+        // Cleanup
+        setAttributeSpy.restore();
+        registerCanFocusEventsSpy.restore();
+    });
+
+    it ('setAllowFocus, remove focusable', function() {
+        // Arrange
+        const hasAttributeSpy = sinon.spy(container.itemsContainer, 'hasAttribute');
+        const removeAttributeSpy = sinon.spy(container.itemsContainer, 'removeAttribute');
+        const unregisterCanFocusEventsSpy = sinon.spy(container, 'unregisterCanFocusEvents');
+
+        // Act
+        const result = container.setAllowFocus(false);
+
+        // Assert
+        assert(hasAttributeSpy.withArgs('tabindex').calledOnce, 'hasAttribute should have been called once');
+        assert(removeAttributeSpy.withArgs('tabindex').calledOnce, 'removeAttribute should have been called once');
+        assert(unregisterCanFocusEventsSpy.calledOnce, 'unregisterCanFocusEvent should have been called once');
+        assert(result, 'result type should be true');
+
+        // Cleanup
+        hasAttributeSpy.restore();
+        removeAttributeSpy.restore();
+        unregisterCanFocusEventsSpy.restore();
+    });
+
+    it ('handelFocus, set focus if no element present', function() {
+        // Arrange
+        container.selectedElement = null;
+        const focusChildSpy = sinon.spy(container, 'focusChild');
+
+        // Act
+        container.handelFocus();
+
+        // Assert
+        assert(focusChildSpy.withArgs(0).calledOnce);
+
+        // Cleanup
+        focusChildSpy.restore();
+    });
+
+    it ('handelKeyPress - left key', function() {
+        // Arrange
+        const focusChildSpy = sinon.spy(container, 'focusChild');
+        const getNextItemIndexSpy = sinon.spy(container, 'getNextItemIndex');
+
+        // Act
+        container.handelKeyPress({keyCode: 37});
+
+        // Assert
+        assert(focusChildSpy.calledOnce, 'focusChild should have been called once');
+        assert(getNextItemIndexSpy.withArgs(-1).calledOnce, 'getNextItemIndex should have been called with a -1 offset');
+
+        // Cleanup
+        focusChildSpy.restore();
+        getNextItemIndexSpy.restore();
+    });
+
+    it ('handelKeyPress - right key', function() {
+        // Arrange
+        const focusChildSpy = sinon.spy(container, 'focusChild');
+        const getNextItemIndexSpy = sinon.spy(container, 'getNextItemIndex');
+
+        // Act
+        container.handelKeyPress({keyCode: 39});
+
+        // Assert
+        assert(focusChildSpy.calledOnce, 'focusChild should have been called once');
+        assert(getNextItemIndexSpy.withArgs(1).calledOnce, 'getNextItemIndex should have been called with a 1 offset');
+
+        // Cleanup
+        focusChildSpy.restore();
+        getNextItemIndexSpy.restore();
+    });
+
+    it ('getNextItemIndex, no selectedElement', function() {
+        // Arrange
+        container.selectedElement = null;
+
+        // Act
+        const result = container.getNextItemIndex(1);
+
+        // Assert
+        assert(result === 0, 'getNextItemIndex should have been zero when no selectedElement present');
+    });
+
+    it ('getNextItemIndex, prevent below zero index', function() {
+        // Arrange
+        container.selectedElement = container.itemsContainer.children[0];
+
+        // Act
+        const result = container.getNextItemIndex(-1);
+
+        // Assert
+        assert(result === 0, 'result should have been zero when moving left and the slected element is the first child');
+    });
+
+    it ('getNextItemIndex, prevent greater than count index', function() {
+        // Arrange
+        const lastIndex = container.itemsContainer.children.length -1;
+        container.selectedElement = container.itemsContainer.children[lastIndex];
+
+        // Act
+        const result = container.getNextItemIndex(1);
+
+        // Assert
+        assert(result === lastIndex, 'result should have been last index when moving left and the slected element is the first child');
+    });
+
+    it ('getNextItemIndex, get index based on offset', function() {
+        // Arrange
+        container.selectedElement = container.itemsContainer.children[0];
+
+        // Act
+        const result = container.getNextItemIndex(1);
+
+        // Assert
+        assert(result === 1, 'result should have been 1');
     });
 });

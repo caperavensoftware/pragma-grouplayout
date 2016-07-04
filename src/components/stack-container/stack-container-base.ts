@@ -58,9 +58,10 @@ export class StackContainerBase {
         console.log('override this method on inherited');
     }
 
-    setAllowFocus(allowFocus: boolean) {
+    setAllowFocus(allowFocus: boolean): boolean {
         if (!this.itemsContainer) {
-            return;
+            // the value -1 is used by tests for checks
+            return false;
         }
 
         if (allowFocus) {
@@ -73,6 +74,8 @@ export class StackContainerBase {
                 this.unregisterCanFocusEvents();
             }
         }
+
+        return true;
     }
 
     handelFocus() {
