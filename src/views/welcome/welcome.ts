@@ -15,7 +15,7 @@ export class Welcome {
             },
             {
                 id: 3,
-                name: "Tab 3 With some other stuff"
+                name: "Tab 3"
             },
             {
                 id: 4,
