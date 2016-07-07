@@ -1,7 +1,6 @@
 import {expect, assert} from 'chai';
 import {StackContainerBase} from "../../../src/components/stack-container/stack-container-base";
-
-var sinon = require('sinon');
+import * as sinon from 'sinon';
 
 describe('stack container tests', function() {
     let container: StackContainerBase = null;

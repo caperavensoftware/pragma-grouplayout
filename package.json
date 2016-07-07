@@ -11,8 +11,11 @@
   "devDependencies": {
     "@pragmaproducts/build-utilities": "0.0.30",
     "chai": "^3.5.0",
+    "gulp-debug": "^2.1.2",
     "html-to-json": "^0.6.0",
+    "jsdom": "^9.4.1",
     "mocha": "^2.5.3",
+    "mocha-jsdom": "^1.1.0",
     "sinon": "^1.17.4"
   },
   "jspm": {

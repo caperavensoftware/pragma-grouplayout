@@ -1,13 +1,13 @@
 export class SelectionHighlightBase {
     element = null;
-    highlightElement = null;
+    public highlightElement = null;
 
     constructor(element) {
-         this.element = element;
-     }
+        this.element = element;
+    }
 
     performHighlight(element) {
-        requestAnimationFrame(function() {
+        window.requestAnimationFrame(function() {
             const rect = element.getBoundingClientRect();
             const parentRect = element.parentElement.getBoundingClientRect();
             const highlightRect = this.highlightElement.getBoundingClientRect();
@@ -24,5 +24,4 @@ export class SelectionHighlightBase {
             this.highlightElement.style.transform = `translate3d(${x}px, ${y}px, 0)`;
         }.bind(this))
     }
-
 }
