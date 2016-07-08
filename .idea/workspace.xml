@@ -2,16 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="8523a37f-b894-43d2-a4c9-f8a120fefea8" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Airia Tests/to-do-auditing" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/components/text-input/text-input-base.ts" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/components/text-input/text-input.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/components/text-input/text-input.scss" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/components/text-input/text-input.ts" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/test/components/text-input/text-input-tests.ts" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/sass/style.scss" afterPath="$PROJECT_DIR$/sass/style.scss" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/views/welcome/welcome.html" afterPath="$PROJECT_DIR$/src/views/welcome/welcome.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/views/welcome/welcome.ts" afterPath="$PROJECT_DIR$/src/views/welcome/welcome.ts" />
     </list>
     <ignored path="pragma-grouplayout.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -739,7 +730,7 @@
       <workItem from="1467894462507" duration="8000" />
       <workItem from="1467903140483" duration="4454000" />
       <workItem from="1467958637791" duration="714000" />
-      <workItem from="1467959365641" duration="17111000" />
+      <workItem from="1467959365641" duration="17121000" />
     </task>
     <task id="LOCAL-00001" summary="initial">
       <created>1466686909737</created>
@@ -881,7 +872,14 @@
       <option name="project" value="LOCAL" />
       <updated>1467978139025</updated>
     </task>
-    <option name="localTasksCounter" value="21" />
+    <task id="LOCAL-00021" summary="input and aria">
+      <created>1467983264231</created>
+      <option name="number" value="00021" />
+      <option name="presentableId" value="LOCAL-00021" />
+      <option name="project" value="LOCAL" />
+      <updated>1467983264231</updated>
+    </task>
+    <option name="localTasksCounter" value="22" />
     <servers />
   </component>
   <component name="TestHistory">
@@ -917,7 +915,7 @@
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="138470000" />
+    <option name="totallyTimeSpent" value="138480000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -996,7 +994,8 @@
     <MESSAGE value="adding tests for stack container" />
     <MESSAGE value="updated tests" />
     <MESSAGE value="aria" />
-    <option name="LAST_COMMIT_MESSAGE" value="aria" />
+    <MESSAGE value="input and aria" />
+    <option name="LAST_COMMIT_MESSAGE" value="input and aria" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

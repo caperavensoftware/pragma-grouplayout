@@ -1,0 +1,30 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta charset="UTF-8">
+</head>
+<body>
+
+    <ul id="menu" tabindex="0" role="group">
+        <li role="listitem">Item 1</li>
+        <li>Item 2</li>
+        <li>Item 3</li>
+    </ul>
+
+    <button id="button">Set Menu</button>
+<script>
+    /*
+    * Test if changing the role attribute will cause any new changes to fire on the dom for painting.
+    * Result is that it is save to change the role attirbute with out any layout changes.
+    * */
+
+    var menu = document.getElementById('menu');
+
+    document.addEventListener('click', function() {
+        menu.setAttribute('role', 'menu');
+    })
+
+</script>
+</body>
+</html>
