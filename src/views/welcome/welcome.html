@@ -1,6 +1,7 @@
 <template>
     <require from="./../../components/stack-container/stack-container"></require>
     <require from="./../../components/selection-highlight/selection-highlight"></require>
+    <require from="./../../components/text-input/text-input"></require>
     <require from="./welcome.css"></require>
 
     <h1>Welcome to something</h1>
@@ -25,4 +26,9 @@
             <li repeat.for="item of items" class="sc_tab" data-id="${item.id}">${item.name}</li>
         </stack-container>
     </div>
+
+    <text-input id="tiWorkOrderCode" value.two-way="model.workorderCode" label="Work Order Code"  ></text-input>
+    <text-input id="tiAssetCode" value.two-way="model.assetCode" label="Asset Code" ></text-input>
+    <text-input id="tiStaffCode" value.two-way="model.staffCode" label="Staff Code" ></text-input>
+    <div>${model.workorderCode}</div>
 </template>

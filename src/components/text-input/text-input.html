@@ -1,0 +1,7 @@
+<template>
+    <require from="./text-input.css"></require>
+
+    <label id.bind="labelId" for.bind="inputId">${label}</label>
+    <input id.bind="inputId" type="text" aria-labelledby.bind="labelId" value.two-way="value" aria-describedby.bind="describeId"/>
+    <span id.bind="describeId" aria-hidden="true">${description}</span>
+</template>

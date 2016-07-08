@@ -1,1 +1,9 @@
 @import './normalize';
+
+[aria-hidden="true"] {
+  display: none;
+}
+
+[aria-hidden="false"] {
+  display: initial;
+}
