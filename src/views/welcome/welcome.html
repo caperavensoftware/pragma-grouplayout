@@ -3,14 +3,26 @@
     <require from="./../../components/selection-highlight/selection-highlight"></require>
     <require from="./welcome.css"></require>
 
-    <h1>Welcome</h1>
+    <h1>Welcome to something</h1>
+
+    <article>
+        <section>
+            <h1>Stuff</h1>
+            <p>Some stuff is going on so do something</p>
+        </section>
+
+        <section>
+            <h2>Sniff</h2>
+            <p>you are a sniffel</p>
+        </section>
+    </article>
 
     <div class="tabSheet">
         <selection-highlight selected-item.two-way="selectedTab">
         </selection-highlight>
 
         <stack-container class="stack-test" item-position="space-around" selected-item.two-way="selectedTab" can-focus="true" container-type="tablist">
-            <li repeat.for="item of items" class="sc_tab" data-id="${item.id}" role="tab">${item.name}</li>
+            <li repeat.for="item of items" class="sc_tab" data-id="${item.id}">${item.name}</li>
         </stack-container>
     </div>
 </template>

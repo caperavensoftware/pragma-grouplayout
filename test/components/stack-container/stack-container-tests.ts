@@ -29,6 +29,11 @@ describe('stack container tests', function() {
         container.itemsContainer = itemsContainer;
     });
 
+    it('constructor', function() {
+        expect(container).to.not.be.null;
+        expect(container.ariaUtils).to.not.be.null;
+    });
+
     it('updateItemPosition make sure style justifycontent is being set', function() {
         // Act
         container.updateItemPosition('left');

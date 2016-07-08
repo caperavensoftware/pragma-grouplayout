@@ -1,12 +1,15 @@
 import {StackContentItemPositionToCSS} from "./stack-container-definitions";
+import {AriaUtilities, AriaRole} from './../../utilities/aria-utilities';
 
 export class StackContainerBase {
     element = null;
     itemsContainer = null;
     selectedElement = null;
+    ariaUtils = null;
 
     constructor(element) {
         this.element = element;
+        this.ariaUtils = new AriaUtilities();
     }
 
     updateItemPosition(itemPosition: any) {
@@ -111,5 +114,28 @@ export class StackContainerBase {
         }
 
         return result;
+    }
+
+
+    updateContainerType(containerType) {
+        var role = this.ariaUtils.groupByName(containerType);
+
+        if (!role) {
+            throw new Error(`${containerType} is not a expected container role`);
+        }
+
+        this.itemsContainer.setAttribute('role', role.group);
+
+        if (this.itemsContainer.children && this.itemsContainer.children.length > 0) {
+            const childRole = role.item;
+
+            for (var i = 0; i < this.itemsContainer.children.length -1; i++) {
+                var child = this.itemsContainer.children[i];
+
+                if (child.tagName.toLowerCase() === 'li') {
+                    child.setAttribute('role', childRole);
+                }
+            }
+        }
     }
 }

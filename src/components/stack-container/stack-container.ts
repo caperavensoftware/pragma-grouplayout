@@ -9,6 +9,7 @@ export class StackContainer extends StackContainerBase{
     @bindable selectable = false;
     @bindable selectedItem = null;
     @bindable canFocus = false;
+    @bindable containerType = '';
 
     constructor(element) {
         super(element)
@@ -31,6 +32,13 @@ export class StackContainer extends StackContainerBase{
         {
             this.focusChild(0);
         }
+
+        if (this.containerType.length === 0) {
+            this.containerType = 'group';
+        }
+        else {
+            this.updateContainerType(this.containerType);
+        }
     }
 
     itemPositionChanged() {
@@ -52,5 +60,9 @@ export class StackContainer extends StackContainerBase{
 
     canFocusChanged() {
         this.setAllowFocus(this.canFocus);
+    }
+
+    containerTypeChanged() {
+        this.updateContainerType(this.containerType);
     }
 }
